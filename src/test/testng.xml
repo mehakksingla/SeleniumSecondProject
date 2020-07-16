@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="ABC">
+   <parameter name="browser" value="CHROME"></parameter>
+<!--    <parameter name="browser" value="FIREFOX"></parameter>-->
+    <test name="Learning Test">
+        <parameter name="siteUrl" value="https://www.zomato.com/ncr"></parameter>
+        <classes>
+<!--            <class name="io.pragra.learning.ZomatoHomeTest"></class>-->
+            <class name="io.pragra.learning.ZomatoHomeTest"></class>
+        </classes>
+    </test>
+</suite>
