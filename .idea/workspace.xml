@@ -1,21 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f941666-be29-4ce4-b32c-fc1549b1ff13" name="Default Changelist" comment="&quot;Zoom, Zomato and CN Testing&quot;">
-      <change afterPath="$PROJECT_DIR$/screen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenshot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/Readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/io/pragra/learning/CNTesting.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/io/pragra/learning/CNTesting.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/io/pragra/learning/ZomatoHomeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/io/pragra/learning/ZomatoHomeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/io/pragra/learning/ZoomHomeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/io/pragra/learning/ZoomHomeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/testng.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/io/pragra/learning/ZomatoHomeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/io/pragra/learning/ZomatoHomeTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/io/pragra/learning/ZoomHomeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/io/pragra/learning/ZoomHomeTest.class" afterDir="false" />
+    <list default="true" id="9f941666-be29-4ce4-b32c-fc1549b1ff13" name="Default Changelist" comment="&quot;Zoom, Zomato and CN Testing updated&quot;">
+      <change beforePath="$PROJECT_DIR$/src/test/java/io/pragra/learning/CNTesting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/io/pragra/learning/CNTesting.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -51,16 +38,19 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/io/pragra/learning/CNTesting.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-204">
-              <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+            <state relative-caret-position="774">
+              <caret line="83" column="23" selection-start-line="83" selection-start-column="23" selection-end-line="83" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
@@ -124,8 +114,8 @@
         <option value="$PROJECT_DIR$/src/test/java/io/pragra/learning/ZomatoHomeTest.java" />
         <option value="$PROJECT_DIR$/src/test/testng.xml" />
         <option value="$PROJECT_DIR$/src/test/Readme.md" />
-        <option value="$PROJECT_DIR$/src/test/java/io/pragra/learning/CNTesting.java" />
         <option value="$PROJECT_DIR$/src/test/.gitignore" />
+        <option value="$PROJECT_DIR$/src/test/java/io/pragra/learning/CNTesting.java" />
       </list>
     </option>
   </component>
@@ -398,7 +388,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&quot;Zoom, Zomato and CN Testing&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;Zoom, Zomato and CN Testing&quot;" />
+    <MESSAGE value="&quot;Zoom, Zomato and CN Testing updated&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;Zoom, Zomato and CN Testing updated&quot;" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/testng/lib/testng-plugin.jar!/resources/standardSchemas/testng-1.0.dtd">
@@ -468,17 +459,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/io/pragra/learning/CNTesting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-204">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/io/pragra/learning/CNTesting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="774">
+          <caret line="83" column="23" selection-start-line="83" selection-start-column="23" selection-end-line="83" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

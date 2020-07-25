@@ -81,6 +81,7 @@ public class CNTesting {
         File screenshot = droppable.getScreenshotAs(OutputType.FILE);
         Files.copy(screenshot.toPath(), Paths.get("screenshot.png"));
 
+        driver.close();
         driver.quit();
 
     }
