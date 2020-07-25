@@ -23,6 +23,11 @@
                     <target>1.8</target>
                     </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.surefire</groupId>
+                <artifactId>surefire</artifactId>
+            </plugin>
         </plugins>
     </build>
 

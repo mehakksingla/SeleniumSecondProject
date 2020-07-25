@@ -19,123 +19,170 @@ public class ZomatoHomeTest {
         if (browser.equalsIgnoreCase("CHROME")) {
             System.setProperty("webdriver.chrome.driver", "C:\\Users\\Mehak Singla\\Downloads\\chromedriver.exe");
             driver = new ChromeDriver();
-        }
-        else if(browser.equalsIgnoreCase("FIREFOX")){
+        } else if (browser.equalsIgnoreCase("FIREFOX")) {
             System.setProperty("webdriver.gecko.driver", "C:\\Users\\Mehak Singla\\Downloads\\geckodriver.exe");
             driver = new FirefoxDriver();
         }
 
     }
 
-
     @BeforeTest
     @Parameters("siteUrl")
-    public void setUp2(String url){
+    public void setUp2(String url) {
         driver.get(url);
     }
 
-//    @Test
-//    public void testSample() throws InterruptedException {
-//        String title = driver.getTitle();
-//        System.out.println(title);
-//        Assert.assertTrue(title.contains("NCR"));
-//        WebElement community = driver.findElement(By.cssSelector("div[name='For Foodies']>nav>a:nth-child(2)"));
+    @Test(enabled = false)
+    public void testSample() throws InterruptedException {
+        String title = driver.getTitle();
+        System.out.println(title);
+        Thread.sleep(2000);
+        Assert.assertTrue(title.contains("NCR"));
 
-//        ((JavascriptExecutor)driver).executeScript(
-//                "arguments[0].scrollIntoview()", community
-//        );
-//
-//        ((JavascriptExecutor)driver).executeScript(
-//                "arguments[0].click()", community
-//        );
-//
-//        Thread.sleep(2000);
-//        System.out.println(driver.getCurrentUrl());
-//
-//        Assert.assertEquals("https://community.zomato.com/", driver.getCurrentUrl());
-//
-//        System.out.println(driver.getPageSource());
+        //how to inspect element using css selector
+        WebElement community = driver.findElement(By.cssSelector("div[name='For Foodies']>nav>a:nth-child(2)"));
+        community.click();
 
-//        WebElement elm = driver.findElement(By.linkText("Contact Sales"));
-//        elm.click();
-//        Actions actions = new Actions(driver);
-//        actions.keyDown(Keys.CONTROL).click(driver.findElement(By.linkText("Contact Sales"))).build().perform();
-//        Thread.sleep(5000);
-//        driver.close();
-//    }
+        ((JavascriptExecutor) driver).executeScript(                     //use javascript executor when simple community.click command doesnt work
+                "arguments[0].scrollIntoview()", community
+        );
+
+        ((JavascriptExecutor) driver).executeScript(
+                "arguments[0].click()", community
+        );
+
+        Thread.sleep(2000);     //give some time to browser to load the community website so that it matches with actual and expected url
+
+        System.out.println(driver.getCurrentUrl());
+        Assert.assertEquals("https://community.zomato.com/", driver.getCurrentUrl()); //use assert here to match url with community.zomato.com
+
+        System.out.println(driver.getPageSource());
+    }
+
+// to show the difference between void close and void quit : open zoom.us
 
     @Test(enabled = false)
-    public void testSample3() throws InterruptedException{
-        driver.get("https://www.zomato.com/ncr");
+    public void testSample3() throws InterruptedException {
+        //driver.get("https://www.zomato.com/ncr");
 
-//        WebElement country = driver.findElement(By.xpath("//footer//div[@aria-labelledby='country-dropdown-label'] "));
-//        country.click();
+        WebElement search = driver.findElement(By.xpath("//div[@class = 'searchContainer']//input[@placeholder ='Search for restaurant, cuisine or a dish']"));
+        search.sendKeys("Momos");
+        Thread.sleep(2000);
+        search.clear();
+
+        search.sendKeys("Manchurian");
+        Thread.sleep(2000);
+
+        System.out.println(search.getAttribute("class"));
+
+        System.out.println(search.getCssValue("font-family"));
+
+        ((JavascriptExecutor) driver).executeScript(
+                "arguments[0].style.display='none'", search
+        );
+
+        System.out.println(search.isDisplayed());
+
+        ((JavascriptExecutor) driver).executeScript(     //it is a hack that we use in selenium to force run the things
+                "arguments[0].setAttribute('disabled' , 'disabled')", search
+        );
+        System.out.println(search.isEnabled());
+    }
+
+    @Test(enabled = false)
+        public void testButton(){
+
+            WebElement searchButton = driver.findElement(By.xpath("//div[@class = 'searchContainer']//div[@aria-label = 'search button']"));
+            searchButton.click();
+    }
+
+    @Test(enabled = false)
+    public void dropDownButton() throws InterruptedException {
+        WebElement triangle = driver.findElement(By.xpath("//div[@class = 'searchContainer']//i[2]"));
+        triangle.click();
+        Thread.sleep(2000);
+
+
+//    @Test(enabled = true)
+//    public void testGender() throws InterruptedException {
 //
-//        driver.findElement(By.id("country-canada")).click();
+//        driver.get("https://semantic-ui.com/modules/dropdown.html");
+//        WebElement gender = driver.findElement(By.xpath("//div[contains(@class, 'another')]/div[@class = 'ui dropdown selection']/select"));
+//        Select select = new Select(gender);
 //
-//       WebElement fb = driver.findElement(By.xpath("//div[@name ='Social links']//a[@href='https://www.facebook.com/zomato']"));
-//       Thread.sleep(5000);
-//       fb.click();
+////        ((JavascriptExecutor) driver).executeScript(
+////                "arguments[0].scrollIntoview()", gender
+////        );
+//
+////        ((JavascriptExecutor) driver).executeScript(
+////                "arguments[0].click()", gender
+////        );
+//
+//        select.selectByIndex(1);
+//        Thread.sleep(2000);
+//
+//    }
+
+        WebElement country = driver.findElement(By.xpath("//footer//div[@aria-labelledby='country-dropdown-label'] "));
+        country.click();
+
+        driver.findElement(By.id("country-canada")).click();
+
+        WebElement fb = driver.findElement(By.xpath("//div[@name ='Social links']//a[@href='https://www.facebook.com/zomato']"));
+        Thread.sleep(5000);
+        fb.click();
 
 
-        WebElement mb= driver.findElement(By.xpath("//div//a[@href='https://www.zomato.com/mumbai/']"));
+        WebElement mb = driver.findElement(By.xpath("//div//a[@href='https://www.zomato.com/mumbai/']"));
         Actions actions = new Actions(driver);
         actions.keyDown(Keys.CONTROL).click(driver.findElement(By.xpath("//div//a[@href='https://www.zomato.com/mumbai/']"))).build().perform();
         driver.switchTo().window("https://www.zomato.com/mumbai");
         Thread.sleep(8000);
-
-
-
-        //WebElement genders = driver.findElement(By.xpath("//select[@name='cars']"));
-        //WebElement lang = driver.findElement(By.xpath("//select[@id='language']"));
-       // WebElement chkbx = driver.findElement(By.xpath("//input[@type = 'checkbox' and @value='java']"));
-
-//        if (!chkbx.isSelected()){
-//            chkbx.click();
-//        }
-//
-
-        //Select select = new Select(lang);
-
-//        if (select.isMultiple()){
-//            System.out.println("Yes, its a multiple select");
-//        }
-
-//        select.selectByValue("en");
-//        select.selectByValue("hi");
-//
-//        Thread.sleep(3000);
-
-
-
-        Thread.sleep(5000);
-       // select.deselectAll();Thread.sleep(8000);
-
-
-//        WebElement elm2 = driver.findElement(By.xpath("//*[@class = 'rbbb40-1 MxLSp sc-bEjcJn iTYxnG']//*[@aria-labelledby = 'icon-svg-title-DownTriangle icon-svg-desc-DownTriangle']"));
-//        elm2.click();
-//        Thread.sleep(2000);
-
     }
 
     @Test
-    public void test(){
+    public void multiSelection() throws InterruptedException {
         driver.get("http://pragra.co/sel.html");
-        WebElement dclickButton = driver.findElement(By.id("dblclik"));
-        Actions actions = new Actions(driver);
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView);",dclickButton);
+        WebElement multi = driver.findElement(By.xpath("//select[@name ='cars']"));
+        Select select = new Select(multi);
+        if (select.isMultiple()){
+            System.out.println("Its a multi selection");
+        }
+        select.selectByValue("vo");
+        select.selectByIndex(3);
 
-        ((JavascriptExecutor) driver).executeScript("window.scroll(0,980);");
+        select.deselectAll();
 
-        WebElement draggable = driver.findElement(By.id("draggable"));
-        WebElement droppable = driver.findElement(By.id("droppable"));
+        WebElement rbutton = driver.findElement(By.xpath("//input[@class = 'rbutton' and @value = 'f']"));
+        rbutton.click();
+        Thread.sleep(5000);
 
-        actions.dragAndDropBy(draggable, 100,100).build().perform();
-
-        actions.dragAndDrop(draggable, droppable).build().perform();
-
-
+        WebElement chkbx = driver.findElement(By.xpath("//input[@class = 'input' and @value = 'java']"));
+        if (!chkbx.isSelected()) {
+            chkbx.click();
+        }
     }
+
+}
+
+//    @Test
+//    public void test(){
+//        driver.get("http://pragra.co/sel.html");
+//        WebElement dclickButton = driver.findElement(By.id("dblclik"));
+//        Actions actions = new Actions(driver);
+//        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView);",dclickButton);
+//
+//        ((JavascriptExecutor) driver).executeScript("window.scroll(0,980);");
+//
+//        WebElement draggable = driver.findElement(By.id("draggable"));
+//        WebElement droppable = driver.findElement(By.id("droppable"));
+//
+//        actions.dragAndDropBy(draggable, 100,100).build().perform();
+//
+//        actions.dragAndDrop(draggable, droppable).build().perform();
+//
+//
+//    }
 
 //    @AfterSuite
 //    public void tearDown() throws InterruptedException {
@@ -143,7 +190,3 @@ public class ZomatoHomeTest {
 //        driver.quit();
 //
 //    }
-
-
-
-}

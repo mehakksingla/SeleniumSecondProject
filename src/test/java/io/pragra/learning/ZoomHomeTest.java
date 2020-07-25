@@ -27,6 +27,18 @@ public class ZoomHomeTest {
 
         driver.findElement(By.id("truste-consent-button")).click();
 
+        WebElement elm = driver.findElement(By.linkText("Contact Sales"));
+        elm.click();
+// or (run either above command to open contact sale or the below mentioned)
+
+        //it will open contact sale in new tab whereas the above command will open in the same tab.
+        Actions actions = new Actions(driver);
+        actions.keyDown(Keys.CONTROL).click(driver.findElement(By.linkText("Contact Sales"))).build().perform();
+        Thread.sleep(5000);
+        driver.close();
+
+        driver.quit();
+
         WebElement sigupButton = driver.findElement(By.cssSelector("#signupfree>a"));
 
         sigupButton.click();

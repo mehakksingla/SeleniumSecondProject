@@ -1,12 +1,24 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="ABC">
-   <parameter name="browser" value="CHROME"></parameter>
-<!--    <parameter name="browser" value="FIREFOX"></parameter>-->
-    <test name="Learning Test">
-        <parameter name="siteUrl" value="https://www.zomato.com/ncr"></parameter>
-        <classes>
+<!--<suite name="ABC">-->
+<!--   <parameter name="browser" value="CHROME"></parameter>-->
+<!--&lt;!&ndash;    <parameter name="browser" value="FIREFOX"></parameter>&ndash;&gt;-->
+<!--    <test name="Learning Test">-->
+<!--        <parameter name="siteUrl" value="https://www.zomato.com/ncr"></parameter>-->
+<!--        <classes>-->
+<!--&lt;!&ndash;            <class name="io.pragra.learning.ZomatoHomeTest"></class>&ndash;&gt;-->
 <!--            <class name="io.pragra.learning.ZomatoHomeTest"></class>-->
-            <class name="io.pragra.learning.ZomatoHomeTest"></class>
+<!--        </classes>-->
+<!--    </test>-->
+<!--</suite>-->
+
+
+<!--for CNTesting-->
+<suite name="CNTest">
+    <parameter name="browser" value="CHROME"></parameter>
+    <test name="CNTesting">
+        <classes>
+            <class name="io.pragra.learning.CNTesting"></class>
         </classes>
     </test>
 </suite>
+
